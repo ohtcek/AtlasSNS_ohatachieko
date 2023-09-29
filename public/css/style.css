@@ -1,22 +1,107 @@
 @charset "utf-8";
-html{
+
+html {}
+
+body {
+    width: 100%;
+    overflow: hidden;
 }
-body{
-}
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    background: #186AC9;
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
+
+#side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+}
+
+#head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 32%;
+    margin: 25px 0 0 25px;
+}
+
+.user-info {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+}
+
+.username {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.user-icon {
+    width: 17%;
+    margin: 20px 35px 20px 20px;
+}
+
+.accordion {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin: 0 5px 0 20px;
+}
+
+.accordion.active {
+    transform: rotateX(-180deg);
+    transition-duration: 0.5s;
+}
+
+.accordion-menu {}
+
+.menu {
+    position: absolute;
+    margin: 33px 0 0 0;
+    border: 1.5px solid navy;
+    background-color: white;
+    width: 300px;
+    left: 79%;
+    /* 左端の寄せ方 */
+}
+
+.link {
+    display: block;
+    background-color: white;
+    font-size: 25px;
+    text-align: center;
+    color: gray;
+    height: 83px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.menu a:hover {
+    background-color: navy;
+    color: white;
+}
+
+.li ul a a:hover {
+    background-color: navy;
+    color: white;
+}
+
+.menu.active {
+    transform: translateY(0%);
+    transition: .5s ease-in-out;
 }

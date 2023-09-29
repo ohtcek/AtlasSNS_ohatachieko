@@ -6,9 +6,13 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Auth;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -39,8 +43,12 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function register(Request $request){
-        if($request->isMethod('post')){
+    public function register(Request $request)
+    // ルーティング→メソッドregister
+    // formで入力されたusernameやmailが$requestに入る
+    {
+        if ($request->isMethod('post')) {
+            // postで受け取った場合の処理
 
             $username = $request->input('username');
             $mail = $request->input('mail');
@@ -53,11 +61,19 @@ class RegisterController extends Controller
             ]);
 
             return redirect('added');
+            // 成功していたらaddedに移行する？
         }
         return view('auth.register');
+
+        $request->validate([
+            'username' => 'required|between:2,12',
+            'mail' => 'required|email|between:5,40',
+            'password' => 'required|between:8,20'
+        ]);
     }
 
-    public function added(){
+    public function added()
+    {
         return view('auth.added');
     }
 }
