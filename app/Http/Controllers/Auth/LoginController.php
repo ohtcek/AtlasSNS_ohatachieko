@@ -50,5 +50,15 @@ class LoginController extends Controller
             }
         }
         return view('auth.login');
+        // viewの場合はbladeファイル(auth.はディレクトリ)
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('/login');
+        // リダイレクトの時はURL
+        // メソッドlogoutの処理をする→Authはログイン認証？していた場合に使うやつ
+        // この処理ができたら/loginに戻りますよ、という文
     }
 }

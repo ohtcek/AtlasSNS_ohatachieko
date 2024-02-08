@@ -34,10 +34,22 @@ Route::get('/top', 'PostsController@index');
 
 Route::get('/profile', 'UsersController@profile');
 
+Route::post('/top', 'PostsController@postCreate');
+
+// Route::post('/top', 'PostsController@show');
+// 投稿の表示で作ったけど特別作らなくても表示できるぽい
+
+Route::post('/post/update', 'PostsController@update');
+// 更新処理の時はidいらない
+
+Route::get('/top/{id}/delete/', 'PostsController@delete');
+// 削除
+
 Route::get('/search', 'UsersController@index');
 
-Route::get('/follow-list', 'PostsController@index');
-Route::get('/follower-list', 'PostsController@index');
+Route::get('/follow-list', 'PostsController@follow');
+Route::get('/follower-list', 'PostsController@follower');
 
 // ログアウト機能
-Route::get('/login', 'Auth\LoginController@logout');
+Route::get('/logout', 'Auth\LoginController@logout');
+// getとpostでそれぞれ一つのURL

@@ -16,15 +16,22 @@ header {
 #row {
     display: flex;
     flex-flow: row wrap;
+    justify-content: flex-end;
 }
 
 #container {
     flex: 0 0 80%;
+    width: 0;
+    height: 0;
+    padding-right: 20%;
+    /* paddingがないと右のサイドバーに重なる */
 }
 
 #side-bar {
-    flex: 0 0 19%;
+    flex: 0 0 21%;
     border-left: 1px solid #727272;
+    /* margin: 0 0 0 30px; */
+    height: 900px;
 }
 
 #head {
@@ -41,7 +48,6 @@ header {
     display: flex;
     justify-content: right;
     align-items: center;
-
 }
 
 .username {
@@ -51,7 +57,7 @@ header {
 }
 
 .user-icon {
-    width: 17%;
+    width: 23%;
     margin: 20px 35px 20px 20px;
 }
 
@@ -67,16 +73,16 @@ header {
     transition-duration: 0.5s;
 }
 
-.accordion-menu {}
-
 .menu {
     position: absolute;
     margin: 33px 0 0 0;
+    /* ヘッダーの青い部分に合わせるために上部分空間 */
     border: 1.5px solid navy;
     background-color: white;
     width: 300px;
-    left: 79%;
-    /* 左端の寄せ方 */
+    right: 0;
+    /* left: 79%; */
+    /* 左端の寄せ方→済！ */
 }
 
 .link {
@@ -86,6 +92,7 @@ header {
     text-align: center;
     color: gray;
     height: 83px;
+    /* 多分✖️3がheightの高さ249あたりだった */
     display: flex;
     flex-flow: column;
     justify-content: space-around;
@@ -96,12 +103,246 @@ header {
     color: white;
 }
 
-.li ul a a:hover {
-    background-color: navy;
-    color: white;
-}
-
 .menu.active {
     transform: translateY(0%);
     transition: .5s ease-in-out;
+}
+
+#confirm {
+    padding: 24px 23px 0px 23px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.count {
+    margin-bottom: 12px;
+}
+
+.count-about {
+    margin-bottom: 25px;
+    text-align: left;
+    left: 0;
+    justify-content: flex-start;
+    justify-content: left;
+}
+
+.btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-link {
+    color: #FFFFFF;
+    font-weight: 100;
+    border-radius: 8px;
+    width: 135px;
+    height: 37px;
+    background-color: #1f59c7;
+    margin: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.follow-follower {
+    justify-content: space-between;
+}
+
+.search {
+    /* flex: 0 0 19%; */
+    border-top: 1px solid #727272;
+    display: flex;
+    justify-content: center;
+
+}
+
+.search-link {
+    color: #FFFFFF;
+    font-weight: 100;
+    border-radius: 8px;
+    font-size: 110%;
+    width: 160px;
+    height: 37px;
+    background-color: #1f59c7;
+    margin: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0 0 0;
+}
+
+.content {
+    display: flex;
+    border-bottom: 8px solid #e1e1e1;
+    width: 98.7%;
+    height: 155px;
+}
+
+.form {
+    border: none;
+    /* width: 1135px; */
+    /* widthをもっと綺麗にやる方法 */
+    /* padding: 10px 40px 10px 40px; */
+    font-size: 17px;
+    height: 50px;
+    margin: 30px 0 0 0;
+}
+
+.post-icon {
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    padding: 30px 15px 5px 80px;
+}
+
+::placeholder {
+    color: #e1e1e1;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.form-control {
+    border: none;
+    width: 600px;
+    /* widthどのくらいかわからない */
+    font-size: 17px;
+    height: 50px;
+    margin: 0;
+}
+
+.post-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    margin: 5px 160px 0 760px;
+}
+
+.user-icon-post {
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    padding: 0 15px 0 0;
+}
+
+.post-content {
+    margin: 15px 0 0 0;
+}
+
+.post-vertical {
+    display: flex;
+    justify-content: space-between;
+    width: 87.9%;
+    margin: 10px 0 30px 0;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 0 0 10px 124px;
+
+}
+
+.left {
+    display: flex;
+    font-size: medium;
+}
+
+.left :nth-child(2) {
+    font-size: x-small;
+}
+
+.right {
+    text-align: right;
+    padding: 0 25px 0 0;
+}
+
+.icon {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    margin: 0 0 14px 0;
+}
+
+.edit-icon {
+    width: 37px;
+    height: 37px;
+    margin: 0 10px 0 0;
+}
+
+.trash-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.trash-icon-hover {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+    position: relative;
+    background-color: #fff;
+}
+
+/* 画像のスタイル */
+.hover img {
+    position: absolute;
+    /* 重ねてる */
+}
+
+.hover img:last-of-type {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.hover:hover img {
+    opacity: 1;
+}
+
+/* モーダル */
+.modal {
+    display: none;
+}
+
+.content {
+    margin: 0 auto;
+    /* padding: 40px; */
+}
+
+.modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.modal__bg {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+
+.modal__content {
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    border-radius: 6px;
+}
+
+.update-icon-modal {
+    width: 37px;
+    height: 37px;
+}
+
+
+
+
+.m-25 {
+    margin-bottom: 25px;
+}
+
+.m-40 {
+    margin-bottom: 40px;
 }

@@ -3,8 +3,8 @@
 @section('content')
 
 <div id="clear">
-  {{ Auth::user()->username }}
-  <p>さん</p>
+  <p>{{session('username')}}さん</p>
+  <!-- セッションの利用。RegisterControllerにメモ記載 -->
   <p>ようこそ！AtlasSNSへ！</p>
   <p>ユーザー登録が完了しました。</p>
   <p>早速ログインをしてみましょう。</p>

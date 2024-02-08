@@ -42,8 +42,9 @@
                             <p class="accordion">V</p>
                             <ul class="menu">
                                 <li><a class="link" href=" /top">HOME</a></li>
-                                <li><a class="link" href=" /profile">プロフィール編集</a></li>
-                                <li><a class="link" href=" /login">ログアウト</a></li>
+                                <li><a class="link" href="/profile">プロフィール編集</a></li>
+                                <li><a class="link" href=" /logout">ログアウト</a></li>
+                                <!-- 送り先リンクは/logoutだけど、実際は/logoutは目に見えない。けど処理として送る -->
                             </ul>
                         </div>
                         <img class="user-icon" src="{{ asset('/images/icon1.png') }}" alt="ユーザーアイコン">
@@ -52,27 +53,39 @@
                 </div>
 
     </header>
+
     <div id="row">
+
         <div id="container">
             @yield('content')
         </div>
+
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p class="count">@if (Auth::check())
+                    <!-- ログインしてたら表示されるの意味のif。ログインしてなかったら表示されない -->
+                    {{ Auth::user()->username }}
+                    @endifさんの<br>
+                </p>
+                <br>
                 <div>
-                    <p>フォロー数</p>
-                    <p>〇〇名</p>
+                    <p class="count-about">フォロー数{{session('follows.followList')}} 人</p>
+                    <!-- セッション保存のやつ！！超便利！！！ -->
+                    <p class="btn"><a class="btn-link m-25" href="/follow-list">フォローリスト</a></p>
+                    <p class="count-about">フォロワー数{{session('follows.followerList')}} 人</p>
+                    <!-- セッション保存のやつ！！超便利！！！ -->
+                    <p class="btn"><a class="btn-link m-40" href="/follower-list">フォロワーリスト</a></p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
-                <div>
-                    <p>フォロワー数</p>
-                    <p>〇〇名</p>
-                </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <p class="search"><a class="search-link" href="/search">ユーザー検索</a></p>
+            <!-- ユーザー検索の場所　迷子 元は<div id=" side-bar">の中だったけど出した　違う？-->
         </div>
+
+
     </div>
+    </div>
+    </div>
+
     <footer>
     </footer>
     <script src="JavaScriptファイルのURL"></script>
