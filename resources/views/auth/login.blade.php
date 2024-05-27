@@ -2,19 +2,23 @@
 
 @section('content')
 <!-- 適切なURLを入力してください -->
-{!! Form::open(['url' => '/login','method' => 'POST']) !!}
+<div class="login">
+  {!! Form::open(['url' => '/login','method' => 'POST','class'=>'login-content']) !!}
 
-<p>AtlasSNSへようこそ</p>
+  <p class="login-section">AtlasSNSへようこそ</p>
 
-{{ Form::label('e-mail') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
-{{ Form::label('password') }}
-{{ Form::password('password',['class' => 'input']) }}
+  {{ Form::label('mail','mail address',['class'=>'login-label']) }}
+  <br>
+  {{ Form::text('mail',null,['class' => 'input','class'=>'login-form']) }}
+  <br>
+  {{ Form::label('password','password',['class'=>'login-label']) }}
+  <br>
+  {{ Form::password('password',['class' => 'input','class'=>'login-form']) }}
+  <br>
+  {{ Form::submit('LOGIN',['class'=>'login-button']) }}
 
-{{ Form::submit('ログイン') }}
+  <p class="section"><a href="/register">新規ユーザーの方はこちら</a></p>
+  {!! Form::close() !!}
 
-<p><a href="/register">新規ユーザーの方はこちら</a></p>
-
-{!! Form::close() !!}
-
+</div>
 @endsection

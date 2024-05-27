@@ -20,10 +20,10 @@ header {
 }
 
 #container {
-    flex: 0 0 80%;
+    flex: 0 0 79%;
     width: 0;
     height: 0;
-    padding-right: 20%;
+    padding-right: 21%;
     /* paddingがないと右のサイドバーに重なる */
 }
 
@@ -57,8 +57,17 @@ header {
 }
 
 .user-icon {
-    width: 23%;
-    margin: 20px 35px 20px 20px;
+    width: 49px;
+    height: 49px;
+    margin: 20px 30px 20px 10px;
+    border-radius: 50%;
+}
+
+.user-icon2 {
+    width: 49px;
+    height: 49px;
+    margin: 25px 30px 20px 80px;
+    border-radius: 50%;
 }
 
 .accordion {
@@ -119,11 +128,16 @@ header {
 }
 
 .count-about {
-    margin-bottom: 25px;
     text-align: left;
     left: 0;
     justify-content: flex-start;
     justify-content: left;
+    margin: 0 40px 0 0;
+    margin-bottom: 12px;
+}
+
+.count {
+    display: flex;
 }
 
 .btn {
@@ -138,7 +152,7 @@ header {
     width: 135px;
     height: 37px;
     background-color: #1f59c7;
-    margin: 0 0 0 0;
+    margin: 0 0 25px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,7 +167,6 @@ header {
     border-top: 1px solid #727272;
     display: flex;
     justify-content: center;
-
 }
 
 .search-link {
@@ -174,7 +187,6 @@ header {
 .content {
     display: flex;
     border-bottom: 8px solid #e1e1e1;
-    width: 98.7%;
     height: 155px;
 }
 
@@ -193,6 +205,7 @@ header {
     width: 48px;
     height: 48px;
     padding: 30px 15px 5px 80px;
+    border-radius: 50%;
 }
 
 ::placeholder {
@@ -218,10 +231,11 @@ header {
 }
 
 .user-icon-post {
+    width: 49px;
+    height: 49px;
     margin: 0;
-    width: 48px;
-    height: 48px;
-    padding: 0 15px 0 0;
+    margin: 0 15px 0 0;
+    border-radius: 50% 50% 50%;
 }
 
 .post-content {
@@ -231,11 +245,10 @@ header {
 .post-vertical {
     display: flex;
     justify-content: space-between;
-    width: 87.9%;
-    margin: 10px 0 30px 0;
+    /* width: 87.9%; */
+    /* margin: 10px 0 20px 0; */
+    padding: 20px 0 20px 124px;
     border-bottom: 1px solid #e1e1e1;
-    padding: 0 0 10px 124px;
-
 }
 
 .left {
@@ -323,12 +336,21 @@ header {
 .modal__content {
     background: #fff;
     left: 50%;
-    padding: 40px;
-    position: absolute;
     top: 50%;
+    padding: 100px 40px 100px 40px;
+    position: absolute;
     transform: translate(-50%, -50%);
-    width: 60%;
-    border-radius: 6px;
+    width: 55%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.modal_post {
+    width: 700px;
+    height: 200px;
+    align-items: center;
 }
 
 .update-icon-modal {
@@ -336,7 +358,168 @@ header {
     height: 37px;
 }
 
+.search-form {
+    width: 323px;
+    height: 44px;
+    margin: 50px 18px 0 61px;
+    border: solid 1.5px #727272;
+    border-radius: 5px;
+}
 
+.search-form-contents {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 8px solid #e1e1e1;
+    padding: 0 0 55px 0;
+}
+
+.search-button {
+    width: 47px;
+    height: 47px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.search-contents {}
+
+.search-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0 0 0;
+    /* margin: 0 auto; */
+    margin: 0 0 0 305px;
+    width: 490px;
+    height: 75px;
+}
+
+.search-username {
+    font-size: 19px;
+    text-align: left;
+}
+
+.icon-name {
+    display: flex;
+    text-align: left;
+    align-items: center;
+}
+
+.follow {
+    color: #FFFFFF;
+    font-weight: 100;
+    background-color: #40adc1;
+    width: 130px;
+    height: 37px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unfollow {
+    color: #FFFFFF;
+    font-weight: 100;
+    background-color: #ea7e60;
+    width: 130px;
+    height: 37px;
+    border-radius: 8px;
+    margin: 0 0 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.follow-link {
+    color: #FFFFFF;
+}
+
+.unfollow-link {
+    color: #FFFFFF;
+}
+
+.profile-contents {
+    /* margin: 100px 100px 100px 100px; */
+    padding: 5.5% 25.5% 6% 27%;
+    display: block;
+    justify-content: space-between;
+    font-size: 20.5px;
+}
+
+.profile-form {
+    width: 300px;
+}
+
+.username-form {
+    width: 370px;
+    height: 37px;
+    background-color: #ebebeb;
+    border: solid 1px #6b6b6b;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 8px; */
+    align-items: center;
+}
+
+.if-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.profile-form-contents {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 8px solid #e1e1e1;
+    padding: 0 12px 40px 0;
+    justify-content: space-between;
+}
+
+.profile-page {
+    display: flex;
+    padding: 10px 0 0 0;
+    /* align-items: center; */
+}
+
+.profile-user-icon {
+    width: 49px;
+    height: 49px;
+    margin: 30px 15px 5px 110px;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.profile-name-bio {}
+
+.profile-user-content {
+    display: flex;
+    height: 70px;
+    width: 200px;
+    justify-content: space-evenly;
+}
+
+.profile-username-left {}
+
+.profile-username {}
+
+.profile-about {
+    display: flex;
+    padding: 5px 0 0 5px;
+    width: 200px;
+    justify-content: space-evenly;
+
+}
+
+.profile-bio-left {
+    display: block;
+    text-align: left;
+}
+
+.profile-bio {
+    text-align: center;
+}
 
 
 .m-25 {
@@ -345,4 +528,8 @@ header {
 
 .m-40 {
     margin-bottom: 40px;
+}
+
+.m-50 {
+    margin-bottom: 50px;
 }

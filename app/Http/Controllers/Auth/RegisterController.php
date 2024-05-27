@@ -49,7 +49,6 @@ class RegisterController extends Controller
     {
         if ($request->isMethod('post')) {
             // postで受け取った場合の処理
-
             $username = $request->input('username');
             $mail = $request->input('mail');
             $password = $request->input('password');
@@ -57,7 +56,8 @@ class RegisterController extends Controller
             $request->validate(
                 [
                     'username' => 'required|min:2|max:12',
-                    'mail' => 'required|email|min:5|max:40|unique:posts',
+                    'mail' => 'required|email|min:5|max:40|unique:users',
+                    // unique:users→間違ったやつ　usersテーブルの中で同じものは登録できないの意味　違うテーブル名にするとエラーが出る
                     'password' => 'required|min:8|max:20'
                 ],
                 [
@@ -68,7 +68,7 @@ class RegisterController extends Controller
                     'mail.email' => 'メールアドレス形式で入力して下さい。',
                     'mail.min' => 'メールアドレスは5文字以上必要です。',
                     'mail.max' => 'メールアドレスは40文字以下で入力して下さい。',
-                    'mail.unique:posts' => 'メールアドレスが重複しています。',
+                    'mail.unique:users' => 'メールアドレスが重複しています。',
                     'password.required' => 'パスワードは必須項目です。',
                     'password.min' => 'パスワードは8文字以上必要です',
                     'password.max' => 'パスワードは20文字以下で入力して下さい。'
@@ -81,12 +81,14 @@ class RegisterController extends Controller
                 'password' => bcrypt($password),
             ]);
 
-            return redirect('added')->with('username', $username);
+            $request->session()->put('username', $username);
+
+            return redirect('added');
             // returnで、成功していたらaddedに移行する。logincontrollerにも書いてるけどリダイレクトの時はURL、viewの時はbladeファイル(auth.はディレクトリ)を()内にかく
             // ->~~はセッションの文。上記withは()の中のを保存して受け渡す処理('key','value')。これを書いたら、
             // 送り先の表示したいviewで{{session('username')}}と記載すれば表示される。('key')
 
-            $request->session()->put('username', $username);
+
         }
         // ここまでがpost処理の場合のif文
         return view('auth.register');

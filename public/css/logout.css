@@ -1,10 +1,140 @@
 @charset "UTF-8";
 
-html{
+html {
     height: 100%;
 }
 
-body{
+header {
+    margin: 100px 0 0 0;
+}
+
+body {
     height: 100%;
-    background: #186AC9;
+    background: linear-gradient(#bd9391, #adbabd, #91b7c7);
+}
+
+.img {
+    text-align: center;
+}
+
+.atlas-img {
+    width: 10.5%;
+    /* padding: 170px 0 0 0; */
+}
+
+.subtitle {
+    color: white;
+    font-size: 33px;
+    text-align: center;
+}
+
+#container {
+    padding: 0 10px 0 10px;
+    width: 300px;
+    margin: 0 auto;
+    color: white;
+    align-items: center;
+}
+
+.login {
+    width: 270px;
+    margin: 50px 0 0 0;
+    background-color: rgb(0, 0, 0, 0.2);
+    border-radius: 13px;
+    padding: 20px;
+}
+
+.login-section {
+    margin: 0 0 30px 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.login-label {
+    font-size: 15px;
+}
+
+.login-form {
+    border-radius: 6px;
+    border: 1px;
+    width: 260px;
+    height: 39px;
+    margin: 6px 0 20px 0;
+}
+
+.login-button {
+    background-color: #67697C;
+    border: 1px;
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
+    border-radius: 6px;
+    padding: 9px 39px 9px 39px;
+    margin: 0 0 0 124px;
+}
+
+.section {
+    text-align: center;
+    color: white;
+    margin: 40px 0 15px 0;
+}
+
+.section a:visited {
+    color: white;
+}
+
+/* register */
+.register {
+    width: 270px;
+    margin: 20px 0 0 0;
+    background-color: rgb(0, 0, 0, 0.2);
+    border-radius: 13px;
+    padding: 20px;
+}
+
+.register-section {
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+.register-content {
+    margin: 0 0 20px 0;
+    text-align: right;
+}
+
+.register-form {
+    width: 270px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px;
+    margin: 6px 0 20px 0;
+}
+
+.register-label {
+    font-size: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.register-button {
+    background-color: #67697C;
+    border: 1px;
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
+    border-radius: 6px;
+    padding: 9px 20px 9px 20px;
+    margin: 10px 0 0 0;
+}
+
+.back-link {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin: 35px 0 0 0;
+}
+
+.back-link a:visited {
+    color: white;
 }

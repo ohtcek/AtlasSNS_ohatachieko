@@ -19,7 +19,7 @@
     <!--iphoneのアプリアイコン指定-->
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
     <!--OGPタグ/twitterカード-->
 </head>
 
@@ -42,12 +42,12 @@
                             <p class="accordion">V</p>
                             <ul class="menu">
                                 <li><a class="link" href=" /top">HOME</a></li>
-                                <li><a class="link" href="/profile">プロフィール編集</a></li>
+                                <li><a class="link" href="/profile/{{ Auth::user()->id }}">プロフィール編集</a></li>
                                 <li><a class="link" href=" /logout">ログアウト</a></li>
                                 <!-- 送り先リンクは/logoutだけど、実際は/logoutは目に見えない。けど処理として送る -->
                             </ul>
                         </div>
-                        <img class="user-icon" src="{{ asset('/images/icon1.png') }}" alt="ユーザーアイコン">
+                        <img class="user-icon" src="{{ Storage::url( Auth::user()->images) }}" alt="ユーザーアイコン">
                         <!-- 相対ぱすコピーするとpublic/ついてくるけどいらない -->
                     </div>
                 </div>
@@ -69,11 +69,18 @@
                 </p>
                 <br>
                 <div>
-                    <p class="count-about">フォロー数{{session('follows.followList')}} 人</p>
-                    <!-- セッション保存のやつ！！超便利！！！ -->
-                    <p class="btn"><a class="btn-link m-25" href="/follow-list">フォローリスト</a></p>
-                    <p class="count-about">フォロワー数{{session('follows.followerList')}} 人</p>
-                    <!-- セッション保存のやつ！！超便利！！！ -->
+                    <div class="count">
+                        <p class="count-about">フォロー数</p>
+                        <p>{{ Auth::user()->follows->count() }}</p>
+                        <!--countの時は最後にcount() -->
+                        <p>人</p>
+                    </div>
+                    <p class="btn"><a class="btn-link" href="/follow-list">フォローリスト</a></p>
+                    <div class="count">
+                        <p class="count-about">フォロワー数
+                        <p>{{ Auth::user()->followers->count() }}</p>
+                        <p>人</p>
+                    </div>
                     <p class="btn"><a class="btn-link m-40" href="/follower-list">フォロワーリスト</a></p>
                 </div>
             </div>
