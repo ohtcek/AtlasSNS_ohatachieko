@@ -407,7 +407,7 @@ header {
 .follow {
     color: #FFFFFF;
     font-weight: 100;
-    background-color: #40adc1;
+    background-color: #67acf8;
     width: 130px;
     height: 37px;
     border-radius: 8px;
@@ -419,7 +419,7 @@ header {
 .unfollow {
     color: #FFFFFF;
     font-weight: 100;
-    background-color: #ea7e60;
+    background-color: #db4a55;
     width: 130px;
     height: 37px;
     border-radius: 8px;

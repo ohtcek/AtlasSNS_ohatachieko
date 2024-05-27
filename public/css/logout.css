@@ -10,7 +10,8 @@ header {
 
 body {
     height: 100%;
-    background: linear-gradient(#bd9391, #adbabd, #91b7c7);
+    /* background: linear-gradient(#bd9391, #adbabd, #91b7c7); */
+    background: linear-gradient(#2869c0, #5da2f0, #eddd60);
 }
 
 .img {
@@ -63,7 +64,7 @@ body {
 }
 
 .login-button {
-    background-color: #67697C;
+    background-color: #db4a55;
     border: 1px;
     color: white;
     font-size: 20px;
@@ -118,7 +119,7 @@ body {
 }
 
 .register-button {
-    background-color: #67697C;
+    background-color: #db4a55;
     border: 1px;
     color: white;
     font-size: 20px;
