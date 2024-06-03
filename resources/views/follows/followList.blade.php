@@ -2,13 +2,18 @@
 
 @section('content')
 
+
+
 <!-- アイコン -->
 <div class="search-form-contents">
-  @foreach($icons as $icon)
-  <a href="/follow-list/{{$icon->id}}/profile">
-    <img class="user-icon" src="{{ Storage::url( $icon->images) }}" alt="ユーザーアイコン">
-  </a>
-  @endforeach
+  <p class="list-text">Follow List</p>
+  <div class="list">
+    @foreach($icons as $icon)
+    <a href="/follow-list/{{$icon->id}}/profile">
+      <img class="follow-user-icon" src="{{ Storage::url( $icon->images) }}" alt="ユーザーアイコン">
+    </a>
+    @endforeach
+  </div>
 </div>
 
 <div class="post-content">
@@ -24,7 +29,7 @@
       {{ $post->post }}
     </div>
     <div class="right">
-      <td class="time">{{ $post->created_at }}</td>
+      <td class="time">{{ $post->created_at->format('Y-m-d h:i') }}</td>
       <br>
       <!-- ※※※※※※※※※※※※idを名前と紐づけるかも※※※※※※※※※※※※※※ -->
     </div>

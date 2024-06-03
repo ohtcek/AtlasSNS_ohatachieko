@@ -18,7 +18,7 @@
   <img class="user-icon2" src=" {{ Storage::url( Auth::user()->images) }}" alt="ユーザーアイコン">
   {!! Form::open(['url' => '/top']) !!}
   <div class="form">
-    {{ Form::text('post',null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください。','method' => 'POST']) }}
+    {{ Form::textarea('post',null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください。','method' => 'POST']) }}
     <br>
     <input type="image" class="post-button" src="/images/post.png"></input>
     {!! Form::close() !!}
@@ -31,17 +31,17 @@
   <!-- orで複数のif文を挟める -->
   <div class="post-vertical">
     <div class="left">
-      <tr>
-        <img class="user-icon-post" src="{{ asset('/images/icon1.png') }}" alt="ユーザーアイコン">
+      <img class="user-icon-post" src="{{ Storage::url( $post->user->images) }}" alt="ユーザーアイコン">
+      <div class="left-name">
         {{ $post->user->username }}
-        <!-- foreachのpost->リレーション Postモデルのuserメソッド->カラム名 -->
-        <br>
-        <br>
-        <td>{{ $post->post }}</td>
-      </tr>
+      </div>
+    </div>
+    <!-- foreachのpost->リレーション Postモデルのuserメソッド->カラム名 -->
+    <div class="left-post">
+      <td>{!!nl2br ($post->post) !!}</td>
     </div>
     <div class="right">
-      <td class="time">{{ $post->created_at }}</td>
+      <td class="time">{{ $post->created_at->format('Y-m-d h:i') }}</td>
       <br>
       <!-- ※※※※※※※※※※※※idを名前と紐づけるかも※※※※※※※※※※※※※※ -->
       @if (Auth::user()->id == $post->user_id)
@@ -72,6 +72,7 @@
       <form action="/post/update" method="post">
         <textarea name="post" class="modal_post"></textarea>
         <input type="hidden" name="id" class="modal_id" value="<?php $post->id ?>">
+        <br>
         <input class="update-icon-modal" type="image" value="更新" src="/images/edit.png">
         <!-- <button type=“submit”><img class=“edit-btn” src="/images/edit.png"></button> -->
         {{ csrf_field() }}

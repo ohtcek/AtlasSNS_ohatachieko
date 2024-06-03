@@ -39,7 +39,7 @@
       </tr>
     </div>
     <div class="right">
-      <td class="time">{{ $post->created_at }}</td>
+      <td class="time">{{ $post->created_at->format('Y-m-d h:i') }}</td>
       <br>
       <!-- ※※※※※※※※※※※※idを名前と紐づけるかも※※※※※※※※※※※※※※ -->
     </div>

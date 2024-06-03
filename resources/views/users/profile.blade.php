@@ -45,12 +45,15 @@
 
   <div class="profile">
     <p>icon image</p>
-    <div class="profile-form">
-      {{ Form::file('img_path',null, ['class' => 'username-form', 'placeholder' => 'ファイルを選択','method' => 'POST']) }}
+    <label class="profile-form">
+      {{ Form::file('img_path',null, ['class' => 'icon-form', 'placeholder' => 'ファイルを選択','method' => 'POST']) }}
       <!-- ファサードだったらenctypeいらない　調べる -->
-    </div>
+    </label>
   </div>
-  {{ Form::submit('更新') }}
+
+  <div class="button">
+    {{ Form::submit('更新',['class' => 'update-button']) }}
+  </div>
   {!! Form::close() !!}
 
 </div>

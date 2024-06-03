@@ -13,7 +13,7 @@ class PostsController extends Controller
 
     public function index(Request $request)
     {
-        $posts = Post::get();
+        $posts = Post::orderBy('updated_at', 'desc')->get();
         return view('posts.index', ['posts' => $posts]);
         // ['posts' => $posts]で、投稿を表示させるforeach構文の@foreach ($posts as $post)の$posts部分を定義
         // かりきゅらむにも書いてる(booksのあたり)

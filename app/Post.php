@@ -18,8 +18,8 @@ class Post extends Model
         // 単数系だからs付かない
     }
 
-    public function posts()
-    {
-        return $this->belongsToMany(User::class, 'follows', 'following_id', 'followed_id');
-    }
+    // public function posts()
+    // {
+    //     return $this->belongsToMany(User::class, 'follows', 'following_id', 'followed_id');
+    // }
 }

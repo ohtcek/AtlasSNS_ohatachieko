@@ -139,3 +139,56 @@ body {
 .back-link a:visited {
     color: white;
 }
+
+/* added */
+.added {
+    width: 270px;
+    margin: 50px 0 0 0;
+    background-color: rgb(0, 0, 0, 0.2);
+    border-radius: 13px;
+    padding: 30px 20px 40px 20px;
+    text-align: center;
+}
+
+.added-bold {
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #db4a55;
+    border: 1px;
+    color: white;
+    font-size: 17px;
+    font-weight: lighter;
+    border-radius: 6px;
+    width: 150px;
+    padding: 9px 0px 9px 0px;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn a:visited {
+    color: white;
+}
+
+
+.font-big {
+    font-size: 20px;
+}
+
+.added-lighter {
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.m-20 {
+    margin-bottom: 20px;
+}
+
+.m-30 {
+    margin-bottom: 30px;
+}
+
+.m-40 {
+    margin-bottom: 40px;
+}
